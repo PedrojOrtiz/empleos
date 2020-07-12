@@ -18,8 +18,13 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
+      title: 'Agregar Empleo',
+      url: 'crear-empleo',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Listado Empleos',
+      url: 'lista-empleos',
       icon: 'paper-plane'
     },
     {

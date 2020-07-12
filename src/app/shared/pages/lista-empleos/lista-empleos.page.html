@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-empleos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-list>
+
+    <ion-item *ngFor="let empleo of empleados | async">
+      
+      <ion-label (click)="showEmpleo(empleo.uid)">
+
+        <h3>{{empleo.titulo}}</h3>
+        <p>{{empleo.descripcion}}</p>
+        <p>{{empleo.salario}}</p>
+
+      </ion-label>
+      <ion-button shape="round" (click)="showEditarEmpleoId(empleo.uid)">Editar</ion-button>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>

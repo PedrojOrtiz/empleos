@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "ec.ups.edu.e2020.empleos",
   "appName": "empleos",
   "bundledWebRuntime": false,
   "npmClient": "npm",

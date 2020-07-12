@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>584767390106-qrmo0j0o3r9gibnduhocf5g00li64jgi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.584767390106-qrmo0j0o3r9gibnduhocf5g00li64jgi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAzk1YlUKh8BLMHUbbyW9mdzxhP3tUZVMc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>584767390106</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ec.ups.edu.e2020.empleos</string>
+	<key>PROJECT_ID</key>
+	<string>empleos-e2020</string>
+	<key>STORAGE_BUCKET</key>
+	<string>empleos-e2020.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:584767390106:ios:ce6f17a2fad784ea4bba23</string>
+	<key>DATABASE_URL</key>
+	<string>https://empleos-e2020.firebaseio.com</string>
+</dict>
+</plist>
