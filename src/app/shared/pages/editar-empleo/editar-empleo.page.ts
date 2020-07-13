@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { EmpleosService } from '../../services/empleos.service';
 import { ActivatedRoute } from '@angular/router';
 import { Empleo } from 'src/app/model/empleo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-empleo',
@@ -13,7 +14,7 @@ export class EditarEmpleoPage implements OnInit {
 
   empleo: Observable<any>;
   
-  constructor(private empleosService: EmpleosService, private route: ActivatedRoute) { }
+  constructor(private empleosService: EmpleosService, private route: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -22,6 +23,7 @@ export class EditarEmpleoPage implements OnInit {
 
   editarEmpleo(empleo: Empleo) {
     this.empleosService.editarEmpleo(empleo);
+    this.router.navigate(['lista-empleos']);
   }
 
 }

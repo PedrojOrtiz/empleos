@@ -6,10 +6,21 @@
 
 <ion-content fullscreen>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" (click)="showCrearEmpleo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-list>
+    <ion-list-header>
+      Ultimos Empleos
+    </ion-list-header>
 
     <ion-item *ngFor="let empleo of empleados | async">
-      
+      <ion-avatar slot="start">
+        <img [src]="empleo.image.url">
+      </ion-avatar>
       <ion-label (click)="showEmpleo(empleo.uid)">
 
         <h3>{{empleo.titulo}}</h3>

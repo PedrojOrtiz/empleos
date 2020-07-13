@@ -19,6 +19,7 @@
       <ion-input [(ngModel)]="empleo.salario"></ion-input>
     </ion-item>
   </ion-list>
+  <app-camara [icon]="'camera'" [type]="'camera'" (uploadFinished)="imagenCargada($event)"></app-camara>
   <div class="ion-padding">
     <ion-button expand="block" type="submit" class="ion-no-margin" (click)="guardarEmpleo()">Crear Empleo</ion-button>
   </div>

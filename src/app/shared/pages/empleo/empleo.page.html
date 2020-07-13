@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>empleo</ion-title>
+    <ion-title>Empleo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="(empleo | async) as empleo">
+  <ion-card color="dark">
+    <img [src]="empleo.image.url">
+    <ion-card-header>
+      <ion-card-subtitle>Empleo</ion-card-subtitle>
+      <ion-card-title>{{empleo.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{empleo.descripcion}}
+      {{empleo.salario}}
+    </ion-card-content>
+  </ion-card>
+  <div class="ion-padding">
+    <ion-button color="dark" expand="block" type="submit" class="ion-no-margin" (click)="showCrearEmpleoId(empleo.uid)">Editar Empleo</ion-button>
+  </div>
+  <div class="ion-padding">
+    <ion-button color="dark" expand="block" type="submit" class="ion-no-margin" (click)="eliminarEmpleo2(empleo)">Eliminar Empleo</ion-button>
+  </div>
 </ion-content>

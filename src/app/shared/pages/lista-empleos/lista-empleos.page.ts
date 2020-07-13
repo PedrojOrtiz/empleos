@@ -10,26 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ListaEmpleosPage implements OnInit {
 
-  empleados: Observable<any[]>
-  cosas: any = new Array()
+  empleados: Observable<any[]>;
 
-  constructor(private empleosService: EmpleosService,
-    public router: Router) { }
+  constructor(private empleosService: EmpleosService, public router: Router) { }
 
   ngOnInit() {
     this.empleados = this.empleosService.getEmpleos()
-  
-    this.cosas.push({id: 10, nombre: "xya"})
-    this.cosas.push({id: 11, nombre: "jeje"})
-  
   }
 
   showEmpleo(id: any) {
     this.router.navigate([`empleo/${id}`])
   }
 
+  showCrearEmpleo() {
+    this.router.navigate([`crear-empleo`]);
+  }
+
   showEditarEmpleoId(id: any) {
-    console.log("Entro aquiiiiii");
+    //console.log("Entro aquiiiiii");
     this.router.navigate([`editar-empleo/${id}`]);
   }
 

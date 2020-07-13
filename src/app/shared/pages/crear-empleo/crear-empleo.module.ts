@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CrearEmpleoPageRoutingModule } from './crear-empleo-routing.module';
 
 import { CrearEmpleoPage } from './crear-empleo.page';
+import { CamaraComponent } from 'src/app/componentes/camara/camara.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { CrearEmpleoPage } from './crear-empleo.page';
     IonicModule,
     CrearEmpleoPageRoutingModule
   ],
-  declarations: [CrearEmpleoPage]
+  declarations: [CrearEmpleoPage],
+  exports: [CamaraComponent]
 })
 export class CrearEmpleoPageModule {}

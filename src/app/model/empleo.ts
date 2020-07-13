@@ -4,4 +4,5 @@ export class Empleo {
  titulo: string;
  descripcion: string;
  salario: number;
+ image: {}
 }

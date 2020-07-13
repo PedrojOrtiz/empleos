@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpleosService } from '../../services/empleos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
+import { AlertController } from '@ionic/angular';
+import { Empleo } from 'src/app/model/empleo';
+
 
 @Component({
   selector: 'app-empleo',
@@ -12,20 +16,41 @@ export class EmpleoPage implements OnInit {
 
   empleo: Observable<any>;
 
-  constructor(private empleosService: EmpleosService, private route: ActivatedRoute) { }
+  constructor(public alertController: AlertController, private empleosService: EmpleosService, private route: ActivatedRoute, public router: Router) { }
 
-  async ngOnInit() {
-
+  ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.empleo = this.empleosService.getEmpleo(id);
-    console.log('observable', this.empleo);
-    this.empleo.subscribe(data => {
-      console.log('subscribe', data);
+  }
+
+  async eliminarEmpleo2(emple: Empleo) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Eliminar empleo',
+      message: 'Se eliminara de forma permanente',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+          }
+        }, {
+          text: 'Confirmar',
+          handler: () => {
+            this.empleosService.deleteEmpleo(emple.uid);
+            this.router.navigate([`lista-empleos`]);
+          }
+        }
+      ]
     });
 
-    let auxempleo = await this.empleosService.getEmpleoById2(id);
-    console.log('await', auxempleo.titulo);
+    await alert.present();
+  }
 
+
+  showCrearEmpleoId(id: any) {
+    this.router.navigate([`editar-empleo/${id}`]);
   }
 
 }
